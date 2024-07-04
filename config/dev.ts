@@ -7,6 +7,6 @@ export default {
   mini: {},
   h5: {},
   rn: {
-    appName: 'taroDemo'
+    appName: 'maoxingren'
   }
 } satisfies UserConfigExport<'webpack5'>

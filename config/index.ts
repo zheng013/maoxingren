@@ -81,7 +81,7 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       }
     },
     rn: {
-      appName: 'taroDemo',
+      appName: 'maoxingren',
       entry: 'app',
       output: {
         ios: './ios/main.jsbundle',
