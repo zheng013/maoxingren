@@ -76,7 +76,7 @@ android {
 
     namespace "com.maoxingren"
     defaultConfig {
-        applicationId app_id
+        applicationId "com.maoxingren"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

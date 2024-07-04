@@ -4,10 +4,10 @@ name: Assemble Android Release
 # 触发工作流程的事件
 on:
   push:
-    branches: [ main ]
-    tags: [ v* ]
+    # branches: [main, master, develop]
+    tags: [v*, r*, a*]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   workflow_dispatch:
 
@@ -16,7 +16,13 @@ env:
   # 应用的application_id
   APP_ID: com.maoxingren
   # 应用名称
-  APP_NAME: Taro Demo
+  APP_NAME: 喵星人
+   # 应用icon
+  # APP_ICON: ic_launcher
+  # 应用圆角icon
+  # APP_ROUND_ICON: ic_launcher_round
+  # 应用支持的CPU架构
+  APP_ABI_FILTERS: armeabi-v7a, arm64-v8a
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
@@ -24,13 +30,13 @@ env:
   # 版本号
   VERSION_CODE: 10
   # 密钥库文件
-  KEYSTORE_FILE: debug.keystore
+  KEYSTORE_FILE: my-release-key.keystore
   # 密钥库口令
-  KEYSTORE_PASSWORD: android
+  KEYSTORE_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
   # 密钥库别名
-  KEYSTORE_KEY_ALIAS: androiddebugkey
+  KEYSTORE_KEY_ALIAS: my-key-alias
   # 密钥库别名口令
-  KEYSTORE_KEY_PASSWORD: android
+  KEYSTORE_KEY_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
 
 # 工作流作业
 jobs:
